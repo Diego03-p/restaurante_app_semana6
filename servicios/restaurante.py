@@ -1,17 +1,13 @@
-# Clase que administra los productos del restaurante
+from typing import List
+from modelos.producto import Producto
 
 class Restaurante:
-    def __init__(self):
-        self.productos = []
+    def __init__(self) -> None:
+        self.productos: List[Producto] = []
 
-    # Agrega un producto a la lista
-    def agregar_producto(self, producto):
+    def agregar_producto(self, producto: Producto) -> None:
         self.productos.append(producto)
 
-    # Muestra todos los productos registrados
-    def mostrar_productos(self):
-        print("\n========== PRODUCTOS DEL RESTAURANTE ==========\n")
-
+    def mostrar_menu(self) -> None:
         for producto in self.productos:
             print(producto.mostrar_informacion())
-            print("----------------------------------------------")
